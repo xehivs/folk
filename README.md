@@ -9,3 +9,5 @@
 | kNN | 0.99 | +-0.02|
 | SVC | 0.96 | +-0.02|
 | NBC | 0.95 | +-0.02|
+
+![](figures/imb_IRlowerThan9ecoli-0_vs_1.png)

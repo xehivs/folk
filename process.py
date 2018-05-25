@@ -3,6 +3,7 @@ import h
 import exposing
 import numpy as np
 from sklearn import neighbors, tree, svm, naive_bayes, datasets, model_selection, neural_network
+import matplotlib.pyplot as plt
 
 # Set grain
 grain = 16
@@ -60,8 +61,15 @@ for ds_group in ds_groups:
         mean_scores = np.mean(scores, axis = 1)
         std_scores = np.std(scores, axis = 1)
 
+        figname = 'figures/%s%s.png' % (ds_group,ds_name)
+
+        plt.bar(clfs.keys(), mean_scores, yerr=std_scores)
+        plt.savefig(figname)
+
         print("\n|CLF|ACC|STD|")
         print("|---|---|---|")
         for i, clf in enumerate(clfs):
             print("| %s | %.2f | +-%.2f|" % (clf, mean_scores[i], std_scores[i]))
+
+        print("\n![](%s)" % figname)
         exit()
