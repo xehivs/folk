@@ -35,6 +35,8 @@ for ds_group in ds_groups:
     for ds_name in sorted(os.listdir(group_path)):
         if ds_name[0] == '.' or ds_name[0] == '_':
             continue
+        #if ds_name != 'ecoli2':
+        #    continue
         print("\n### %s dataset" % ds_name)
 
         scores = np.zeros((len(clfs), 5))
@@ -70,9 +72,9 @@ for ds_group in ds_groups:
         plt.savefig(figname)
         plt.close(fig)
 
-        print(len(ee.ensemble_))
+        #print(len(ee.ensemble_))
         v = np.ceil(len(ee.ensemble_)/4).astype(int)
-        print(v)
+        #print(v)
 
         fig, ax = plt.subplots(v,4, figsize = (8, 2*v))
         fignameb = 'figures/%s%se.png' % (ds_group,ds_name)
