@@ -1,3 +1,11 @@
-# folk
+## Group imb_IRlowerThan9
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/cyt-v4Lss8o/0.jpg)](https://www.youtube.com/watch?v=cyt-v4Lss8o)
+### ecoli-0_vs_1 dataset
+
+|CLF|ACC|STD|
+|---|---|---|
+|  EE | 0.97 | +-0.02|
+| DTC | 0.97 | +-0.02|
+| kNN | 0.99 | +-0.02|
+| SVC | 0.96 | +-0.02|
+| NBC | 0.95 | +-0.02|

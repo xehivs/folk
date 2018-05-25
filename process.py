@@ -25,13 +25,16 @@ ds_groups = [
 # Point db directory
 ds_dir = "datasets"
 
+# Iterating groups
 for ds_group in ds_groups:
     group_path = "%s/%s" % (ds_dir, ds_group)
-    print("Group %s" % group_path)
+    print("## Group %s" % ds_group)
+
+    # Iterating datasets in group
     for ds_name in sorted(os.listdir(group_path)):
         if ds_name[0] == '.' or ds_name[0] == '_':
             continue
-        print("\n/\n| %s dataset" % ds_name)
+        print("\n### %s dataset" % ds_name)
 
         scores = np.zeros((len(clfs), 5))
 
@@ -46,7 +49,10 @@ for ds_group in ds_groups:
             X_test, y_test = h.load_keel(tst_path)
 
             for j, clf_name in enumerate(clfs):
-                clf = clfs[clf_name]()
+                if clf_name == ' EE':
+                    clf = exposing.EE(grain=4,fuser='equal')
+                else:
+                    clf = clfs[clf_name]()
                 clf.fit(X_train, y_train)
                 score = clf.score(X_test, y_test)
                 scores[j,i-1] = score
@@ -54,5 +60,8 @@ for ds_group in ds_groups:
         mean_scores = np.mean(scores, axis = 1)
         std_scores = np.std(scores, axis = 1)
 
+        print("\n|CLF|ACC|STD|")
+        print("|---|---|---|")
         for i, clf in enumerate(clfs):
-            print("| %s | %.2f [+-%.2f]" % (clf, mean_scores[i], std_scores[i]))
+            print("| %s | %.2f | +-%.2f|" % (clf, mean_scores[i], std_scores[i]))
+        exit()

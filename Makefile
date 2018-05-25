@@ -1,2 +1,2 @@
 all:
-	python process.py
+	python process.py | tee README.md
