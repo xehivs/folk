@@ -4,6 +4,8 @@ import exposing
 import numpy as np
 from sklearn import neighbors, tree, svm, naive_bayes, datasets, model_selection, neural_network
 import matplotlib.pyplot as plt
+from sklearn.model_selection import GridSearchCV
+
 
 def notify(title, text):
     os.system("""
@@ -12,7 +14,8 @@ def notify(title, text):
 
 # Prepare clfs
 clfs = {
-    ' EE': exposing.EE,
+    'SEE': None,
+    'OEE': None,
     'DTC': tree.DecisionTreeClassifier,
     'kNN': neighbors.KNeighborsClassifier,
     'SVC': svm.SVC,
@@ -21,9 +24,9 @@ clfs = {
 
 # Select groups of datasets
 ds_groups = [
-    "imb_IRhigherThan9p1",
+    #"imb_IRhigherThan9p1",
     "imb_IRlowerThan9",
-    "imb_multiclass"
+    #"imb_multiclass"
 ]
 
 # Point db directory
@@ -42,12 +45,26 @@ for group_idx, ds_group in enumerate(ds_groups):
             continue
         notify(ds_name, "%i/%i" % (ds_idx + 1,len(ds_list)))
 
-        #if ds_name != 'balance':
+        #if ds_name != 'ecoli1':
         #    continue
         print("\n### %s dataset" % ds_name)
-        focus = 0
-        grain = 16
         scores = np.zeros((len(clfs), 5))
+
+        # Grid Search
+        parameters = {
+            'focus':[0,1,2,3,4,5],
+            'a_steps':[0,1,2,3,4,5]
+        }
+
+        X, y = h.load_keel("%s/%s/%s.dat" % (
+            group_path, ds_name, ds_name
+        ))
+        print("\nBest parameters")
+        ee = exposing.EE(approach='brute')
+        gs = GridSearchCV(ee, parameters)
+        gs.fit(X, y)
+        params = gs.best_params_
+        print(params)
 
         for i in range(1,6):
             tra_path = "%s/%s/%s-5-fold/%s-5-%itra.dat" % (
@@ -61,10 +78,13 @@ for group_idx, ds_group in enumerate(ds_groups):
 
             ee = None
             for j, clf_name in enumerate(clfs):
-                if clf_name == ' EE':
+                # SEE
+                if clf_name == 'SEE':
+                    clf = exposing.EE()
+                elif clf_name == 'OEE':
                     clf = exposing.EE(approach='brute',
-                                      grain = grain,
-                                      focus = focus)
+                                      focus = params['focus'],
+                                      a_steps = params['a_steps'])
                     ee = clf
                 else:
                     clf = clfs[clf_name]()
@@ -102,8 +122,6 @@ for group_idx, ds_group in enumerate(ds_groups):
         plt.savefig(fignameb)
         plt.savefig("foo.png")
         plt.close(fig)
-
-
 
         print("\n|CLF|ACC|STD|")
         print("|---|---|---|")
