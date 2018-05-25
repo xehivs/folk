@@ -5,8 +5,10 @@ import numpy as np
 from sklearn import neighbors, tree, svm, naive_bayes, datasets, model_selection, neural_network
 import matplotlib.pyplot as plt
 
-# Set grain
-grain = 16
+def notify(title, text):
+    os.system("""
+              osascript -e 'display notification "{}" with title "{}"'
+              """.format(text, title))
 
 # Prepare clfs
 clfs = {
@@ -19,27 +21,32 @@ clfs = {
 
 # Select groups of datasets
 ds_groups = [
-    #"imb_IRhigherThan9p1",
+    "imb_IRhigherThan9p1",
     "imb_IRlowerThan9",
-    #"imb_multiclass"
+    "imb_multiclass"
 ]
 
 # Point db directory
 ds_dir = "datasets"
 
 # Iterating groups
-for ds_group in ds_groups:
+for group_idx, ds_group in enumerate(ds_groups):
+    notify(ds_group, "%i/%i" % (group_idx + 1,len(ds_groups)))
     group_path = "%s/%s" % (ds_dir, ds_group)
     print("## Group %s" % ds_group)
 
     # Iterating datasets in group
-    for ds_name in sorted(os.listdir(group_path)):
+    ds_list = sorted(os.listdir(group_path))
+    for ds_idx, ds_name in enumerate(ds_list):
         if ds_name[0] == '.' or ds_name[0] == '_':
             continue
-        if ds_name != 'ecoli2':
-            continue
-        print("\n### %s dataset" % ds_name)
+        notify(ds_name, "%i/%i" % (ds_idx + 1,len(ds_list)))
 
+        #if ds_name != 'balance':
+        #    continue
+        print("\n### %s dataset" % ds_name)
+        focus = 0
+        grain = 16
         scores = np.zeros((len(clfs), 5))
 
         for i in range(1,6):
@@ -55,7 +62,9 @@ for ds_group in ds_groups:
             ee = None
             for j, clf_name in enumerate(clfs):
                 if clf_name == ' EE':
-                    clf = exposing.EE(approach='brute')
+                    clf = exposing.EE(approach='brute',
+                                      grain = grain,
+                                      focus = focus)
                     ee = clf
                 else:
                     clf = clfs[clf_name]()
@@ -72,6 +81,7 @@ for ds_group in ds_groups:
         ax.bar(clfs.keys(), mean_scores, yerr=std_scores)
         ax.set_ylim([0, 1])
         plt.savefig(figname)
+        plt.savefig("bar.png")
         plt.close(fig)
 
         #print(len(ee.ensemble_))
@@ -90,6 +100,7 @@ for ds_group in ds_groups:
             ax[e // 4,e % 4].axis('off')
         plt.tight_layout()
         plt.savefig(fignameb)
+        plt.savefig("foo.png")
         plt.close(fig)
 
 
