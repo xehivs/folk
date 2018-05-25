@@ -19,8 +19,9 @@ clfs = {
 
 # Select groups of datasets
 ds_groups = [
+    #"imb_IRhigherThan9p1",
     "imb_IRlowerThan9",
-    "imb_multiclass"
+    #"imb_multiclass"
 ]
 
 # Point db directory
@@ -35,8 +36,8 @@ for ds_group in ds_groups:
     for ds_name in sorted(os.listdir(group_path)):
         if ds_name[0] == '.' or ds_name[0] == '_':
             continue
-        #if ds_name != 'ecoli2':
-        #    continue
+        if ds_name != 'ecoli2':
+            continue
         print("\n### %s dataset" % ds_name)
 
         scores = np.zeros((len(clfs), 5))
@@ -69,6 +70,7 @@ for ds_group in ds_groups:
         fig, ax = plt.subplots(1, figsize = (6,3))
         figname = 'figures/%s%s.png' % (ds_group,ds_name)
         ax.bar(clfs.keys(), mean_scores, yerr=std_scores)
+        ax.set_ylim([0, 1])
         plt.savefig(figname)
         plt.close(fig)
 
