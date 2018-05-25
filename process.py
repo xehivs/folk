@@ -49,9 +49,11 @@ for ds_group in ds_groups:
             X_train, y_train = h.load_keel(tra_path)
             X_test, y_test = h.load_keel(tst_path)
 
+            ee = None
             for j, clf_name in enumerate(clfs):
                 if clf_name == ' EE':
-                    clf = exposing.EE(grain=4,fuser='equal')
+                    clf = exposing.EE(approach='brute')
+                    ee = clf
                 else:
                     clf = clfs[clf_name]()
                 clf.fit(X_train, y_train)
@@ -61,10 +63,32 @@ for ds_group in ds_groups:
         mean_scores = np.mean(scores, axis = 1)
         std_scores = np.std(scores, axis = 1)
 
-        figname = 'figures/%s%s.png' % (ds_group,ds_name)
 
-        plt.bar(clfs.keys(), mean_scores, yerr=std_scores)
+        fig, ax = plt.subplots(1, figsize = (6,3))
+        figname = 'figures/%s%s.png' % (ds_group,ds_name)
+        ax.bar(clfs.keys(), mean_scores, yerr=std_scores)
         plt.savefig(figname)
+        plt.close(fig)
+
+        print(len(ee.ensemble_))
+        v = np.ceil(len(ee.ensemble_)/4).astype(int)
+        print(v)
+
+        fig, ax = plt.subplots(v,4, figsize = (8, 2*v))
+        fignameb = 'figures/%s%se.png' % (ds_group,ds_name)
+        for e in range(v*4):
+            if e < len(ee.ensemble_):
+                ex = ee.ensemble_[e]
+                ax[e // 4,e % 4].imshow(ex.rgb())
+                ax[e // 4,e % 4].set_title("%s - %.3f" % (
+                    ex.given_subspace, ex.theta_
+                ), fontsize=8)
+            ax[e // 4,e % 4].axis('off')
+        plt.tight_layout()
+        plt.savefig(fignameb)
+        plt.close(fig)
+
+
 
         print("\n|CLF|ACC|STD|")
         print("|---|---|---|")
@@ -72,4 +96,4 @@ for ds_group in ds_groups:
             print("| %s | %.2f | +-%.2f|" % (clf, mean_scores[i], std_scores[i]))
 
         print("\n![](%s)" % figname)
-        exit()
+        print("\n![](%s)" % fignameb)
