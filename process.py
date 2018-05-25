@@ -24,9 +24,9 @@ clfs = {
 
 # Select groups of datasets
 ds_groups = [
-    #"imb_IRhigherThan9p1",
+    "imb_IRhigherThan9p1",
     "imb_IRlowerThan9",
-    #"imb_multiclass"
+    "imb_multiclass"
 ]
 
 # Point db directory
