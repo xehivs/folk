@@ -46,22 +46,23 @@ for group_idx, ds_group in enumerate(ds_groups):
             continue
         notify(ds_name, "%i/%i" % (ds_idx + 1,len(ds_list)))
 
-        #if ds_name != 'ecoli1':
-        #    continue
         print("\n### %s dataset" % ds_name)
         scores = np.zeros((len(clfs), 5))
 
         # Grid Search
         parameters = {
-            'focus':[0,1,2,3,4,5],
-            'a_steps':[0,1,2,3,4,5]
+            'approach':['brute','purified','random'],
+            'fuser':['equal', 'theta'],
+            'focus':[1,2,3,4],
+            'a_steps':[1,2,3,4],
+            'grain':[8,16,32]
         }
 
         X, y = h.load_keel("%s/%s/%s.dat" % (
             group_path, ds_name, ds_name
         ))
         print("\nBest parameters")
-        ee = exposing.EE(approach='brute')
+        ee = exposing.EE()
         gs = GridSearchCV(ee, parameters)
         gs.fit(X, y)
         params = gs.best_params_
@@ -81,9 +82,11 @@ for group_idx, ds_group in enumerate(ds_groups):
             for j, clf_name in enumerate(clfs):
                 # SEE
                 if clf_name == 'SEE':
-                    clf = exposing.EE()
+                    clf = exposing.EE(approach='brute')
                 elif clf_name == 'OEE':
-                    clf = exposing.EE(approach='brute',
+                    clf = exposing.EE(approach=params['approach'],
+                                      fuser=params['fuser'],
+                                      grain=params['grain'],
                                       focus = params['focus'],
                                       a_steps = params['a_steps'])
                     ee = clf
@@ -127,7 +130,7 @@ for group_idx, ds_group in enumerate(ds_groups):
         print("\n|CLF|ACC|STD|")
         print("|---|---|---|")
         for i, clf in enumerate(clfs):
-            print("| %s | %.2f | +-%.2f|" % (clf, mean_scores[i], std_scores[i]))
+            print("| %s | %.3f | +-%.2f|" % (clf, mean_scores[i], std_scores[i]))
 
         print("\n![](%s)" % figname)
         print("\n![](%s)" % fignameb)

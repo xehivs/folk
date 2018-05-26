@@ -3,16 +3,16 @@
 ### ecoli-0-1-3-7_vs_2-6 dataset
 
 Best parameters
-{'a_steps': 5, 'focus': 5}
+{'a_steps': 1, 'approach': 'brute', 'focus': 3, 'fuser': 'equal', 'grain': 8}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.98 | +-0.02|
-| OEE | 0.99 | +-0.01|
-| DTC | 0.96 | +-0.02|
-| kNN | 0.99 | +-0.01|
-| SVC | 0.98 | +-0.01|
-| NBC | 0.94 | +-0.03|
+| SEE | 0.975 | +-0.02|
+| OEE | 0.989 | +-0.01|
+| DTC | 0.975 | +-0.01|
+| kNN | 0.993 | +-0.01|
+| SVC | 0.975 | +-0.01|
+| NBC | 0.943 | +-0.03|
 
 ![](figures/imb_IRhigherThan9p1ecoli-0-1-3-7_vs_2-6.png)
 
@@ -21,16 +21,16 @@ Best parameters
 ### ecoli4 dataset
 
 Best parameters
-{'a_steps': 3, 'focus': 5}
+{'a_steps': 1, 'approach': 'brute', 'focus': 4, 'fuser': 'theta', 'grain': 16}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.89 | +-0.04|
-| OEE | 0.98 | +-0.02|
-| DTC | 0.96 | +-0.01|
-| kNN | 0.98 | +-0.02|
-| SVC | 0.94 | +-0.00|
-| NBC | 0.82 | +-0.13|
+| SEE | 0.949 | +-0.03|
+| OEE | 0.979 | +-0.02|
+| DTC | 0.955 | +-0.01|
+| kNN | 0.979 | +-0.02|
+| SVC | 0.940 | +-0.00|
+| NBC | 0.815 | +-0.13|
 
 ![](figures/imb_IRhigherThan9p1ecoli4.png)
 
@@ -39,16 +39,16 @@ Best parameters
 ### glass-0-1-6_vs_2 dataset
 
 Best parameters
-{'a_steps': 0, 'focus': 0}
+{'a_steps': 1, 'approach': 'brute', 'focus': 1, 'fuser': 'equal', 'grain': 32}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.57 | +-0.19|
-| OEE | 0.75 | +-0.06|
-| DTC | 0.87 | +-0.04|
-| kNN | 0.90 | +-0.02|
-| SVC | 0.91 | +-0.01|
-| NBC | 0.43 | +-0.06|
+| SEE | 0.655 | +-0.13|
+| OEE | 0.828 | +-0.05|
+| DTC | 0.865 | +-0.04|
+| kNN | 0.901 | +-0.02|
+| SVC | 0.912 | +-0.01|
+| NBC | 0.427 | +-0.06|
 
 ![](figures/imb_IRhigherThan9p1glass-0-1-6_vs_2.png)
 
@@ -57,16 +57,16 @@ Best parameters
 ### glass-0-1-6_vs_5 dataset
 
 Best parameters
-{'a_steps': 0, 'focus': 5}
+{'a_steps': 1, 'approach': 'purified', 'focus': 4, 'fuser': 'equal', 'grain': 8}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.84 | +-0.07|
-| OEE | 0.92 | +-0.07|
-| DTC | 0.96 | +-0.04|
-| kNN | 0.95 | +-0.03|
-| SVC | 0.95 | +-0.01|
-| NBC | 0.98 | +-0.01|
+| SEE | 0.858 | +-0.09|
+| OEE | 0.897 | +-0.06|
+| DTC | 0.957 | +-0.04|
+| kNN | 0.951 | +-0.03|
+| SVC | 0.951 | +-0.01|
+| NBC | 0.978 | +-0.01|
 
 ![](figures/imb_IRhigherThan9p1glass-0-1-6_vs_5.png)
 
@@ -75,16 +75,16 @@ Best parameters
 ### glass2 dataset
 
 Best parameters
-{'a_steps': 2, 'focus': 0}
+{'a_steps': 2, 'approach': 'purified', 'focus': 4, 'fuser': 'theta', 'grain': 8}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.60 | +-0.12|
-| OEE | 0.81 | +-0.03|
-| DTC | 0.85 | +-0.08|
-| kNN | 0.89 | +-0.02|
-| SVC | 0.92 | +-0.01|
-| NBC | 0.46 | +-0.06|
+| SEE | 0.710 | +-0.04|
+| OEE | 0.832 | +-0.04|
+| DTC | 0.860 | +-0.07|
+| kNN | 0.892 | +-0.02|
+| SVC | 0.921 | +-0.01|
+| NBC | 0.457 | +-0.06|
 
 ![](figures/imb_IRhigherThan9p1glass2.png)
 
@@ -93,16 +93,16 @@ Best parameters
 ### glass4 dataset
 
 Best parameters
-{'a_steps': 0, 'focus': 5}
+{'a_steps': 1, 'approach': 'brute', 'focus': 4, 'fuser': 'equal', 'grain': 32}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.87 | +-0.07|
-| OEE | 0.93 | +-0.03|
-| DTC | 0.95 | +-0.04|
-| kNN | 0.97 | +-0.02|
-| SVC | 0.96 | +-0.02|
-| NBC | 0.90 | +-0.04|
+| SEE | 0.878 | +-0.04|
+| OEE | 0.958 | +-0.03|
+| DTC | 0.953 | +-0.04|
+| kNN | 0.967 | +-0.02|
+| SVC | 0.958 | +-0.02|
+| NBC | 0.897 | +-0.04|
 
 ![](figures/imb_IRhigherThan9p1glass4.png)
 
@@ -111,16 +111,16 @@ Best parameters
 ### glass5 dataset
 
 Best parameters
-{'a_steps': 0, 'focus': 5}
+{'a_steps': 1, 'approach': 'purified', 'focus': 4, 'fuser': 'equal', 'grain': 8}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.79 | +-0.08|
-| OEE | 0.96 | +-0.02|
-| DTC | 0.99 | +-0.01|
-| kNN | 0.96 | +-0.02|
-| SVC | 0.96 | +-0.01|
-| NBC | 0.97 | +-0.03|
+| SEE | 0.827 | +-0.08|
+| OEE | 0.916 | +-0.07|
+| DTC | 0.991 | +-0.01|
+| kNN | 0.963 | +-0.02|
+| SVC | 0.958 | +-0.01|
+| NBC | 0.972 | +-0.03|
 
 ![](figures/imb_IRhigherThan9p1glass5.png)
 
@@ -129,16 +129,16 @@ Best parameters
 ### page-blocks-1-3_vs_4 dataset
 
 Best parameters
-{'a_steps': 0, 'focus': 0}
+{'a_steps': 1, 'approach': 'random', 'focus': 1, 'fuser': 'equal', 'grain': 32}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.61 | +-0.04|
-| OEE | 0.91 | +-0.01|
-| DTC | 0.99 | +-0.01|
-| kNN | 0.96 | +-0.03|
-| SVC | 0.94 | +-0.00|
-| NBC | 0.93 | +-0.02|
+| SEE | 0.536 | +-0.03|
+| OEE | 0.858 | +-0.05|
+| DTC | 0.992 | +-0.01|
+| kNN | 0.955 | +-0.03|
+| SVC | 0.941 | +-0.00|
+| NBC | 0.930 | +-0.02|
 
 ![](figures/imb_IRhigherThan9p1page-blocks-1-3_vs_4.png)
 
@@ -147,16 +147,16 @@ Best parameters
 ### shuttle-c0-vs-c4 dataset
 
 Best parameters
-{'a_steps': 0, 'focus': 1}
+{'a_steps': 1, 'approach': 'brute', 'focus': 1, 'fuser': 'equal', 'grain': 8}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 1.00 | +-0.00|
-| OEE | 1.00 | +-0.00|
-| DTC | 1.00 | +-0.00|
-| kNN | 1.00 | +-0.00|
-| SVC | 0.94 | +-0.00|
-| NBC | 1.00 | +-0.00|
+| SEE | 1.000 | +-0.00|
+| OEE | 1.000 | +-0.00|
+| DTC | 1.000 | +-0.00|
+| kNN | 0.999 | +-0.00|
+| SVC | 0.940 | +-0.00|
+| NBC | 0.997 | +-0.00|
 
 ![](figures/imb_IRhigherThan9p1shuttle-c0-vs-c4.png)
 
@@ -165,16 +165,16 @@ Best parameters
 ### shuttle-c2-vs-c4 dataset
 
 Best parameters
-{'a_steps': 0, 'focus': 2}
+{'a_steps': 1, 'approach': 'brute', 'focus': 1, 'fuser': 'equal', 'grain': 8}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.99 | +-0.02|
-| OEE | 1.00 | +-0.00|
-| DTC | 0.99 | +-0.02|
-| kNN | 0.96 | +-0.02|
-| SVC | 0.95 | +-0.02|
-| NBC | 0.99 | +-0.02|
+| SEE | 1.000 | +-0.00|
+| OEE | 1.000 | +-0.00|
+| DTC | 1.000 | +-0.00|
+| kNN | 0.961 | +-0.02|
+| SVC | 0.954 | +-0.02|
+| NBC | 0.992 | +-0.02|
 
 ![](figures/imb_IRhigherThan9p1shuttle-c2-vs-c4.png)
 
@@ -183,16 +183,16 @@ Best parameters
 ### vowel0 dataset
 
 Best parameters
-{'a_steps': 0, 'focus': 5}
+{'a_steps': 4, 'approach': 'purified', 'focus': 3, 'fuser': 'theta', 'grain': 8}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.93 | +-0.01|
-| OEE | 0.96 | +-0.01|
-| DTC | 0.98 | +-0.01|
-| kNN | 0.99 | +-0.00|
-| SVC | 1.00 | +-0.01|
-| NBC | 0.94 | +-0.02|
+| SEE | 0.923 | +-0.01|
+| OEE | 0.963 | +-0.01|
+| DTC | 0.986 | +-0.01|
+| kNN | 0.995 | +-0.00|
+| SVC | 0.997 | +-0.01|
+| NBC | 0.939 | +-0.02|
 
 ![](figures/imb_IRhigherThan9p1vowel0.png)
 
@@ -201,16 +201,16 @@ Best parameters
 ### yeast-0-5-6-7-9_vs_4 dataset
 
 Best parameters
-{'a_steps': 4, 'focus': 5}
+{'a_steps': 1, 'approach': 'purified', 'focus': 4, 'fuser': 'equal', 'grain': 8}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.72 | +-0.05|
-| OEE | 0.88 | +-0.02|
-| DTC | 0.87 | +-0.02|
-| kNN | 0.92 | +-0.01|
-| SVC | 0.90 | +-0.00|
-| NBC | 0.13 | +-0.03|
+| SEE | 0.848 | +-0.02|
+| OEE | 0.898 | +-0.03|
+| DTC | 0.865 | +-0.02|
+| kNN | 0.917 | +-0.01|
+| SVC | 0.903 | +-0.00|
+| NBC | 0.134 | +-0.03|
 
 ![](figures/imb_IRhigherThan9p1yeast-0-5-6-7-9_vs_4.png)
 
@@ -219,16 +219,16 @@ Best parameters
 ### yeast-1-2-8-9_vs_7 dataset
 
 Best parameters
-{'a_steps': 5, 'focus': 5}
+{'a_steps': 4, 'approach': 'random', 'focus': 4, 'fuser': 'theta', 'grain': 8}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.53 | +-0.05|
-| OEE | 0.86 | +-0.05|
-| DTC | 0.94 | +-0.01|
-| kNN | 0.97 | +-0.00|
-| SVC | 0.97 | +-0.00|
-| NBC | 0.12 | +-0.05|
+| SEE | 0.558 | +-0.09|
+| OEE | 0.967 | +-0.01|
+| DTC | 0.943 | +-0.01|
+| kNN | 0.967 | +-0.00|
+| SVC | 0.968 | +-0.00|
+| NBC | 0.117 | +-0.05|
 
 ![](figures/imb_IRhigherThan9p1yeast-1-2-8-9_vs_7.png)
 
@@ -237,16 +237,16 @@ Best parameters
 ### yeast-1-4-5-8_vs_7 dataset
 
 Best parameters
-{'a_steps': 0, 'focus': 0}
+{'a_steps': 4, 'approach': 'brute', 'focus': 4, 'fuser': 'equal', 'grain': 8}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.65 | +-0.11|
-| OEE | 0.88 | +-0.04|
-| DTC | 0.90 | +-0.02|
-| kNN | 0.96 | +-0.00|
-| SVC | 0.96 | +-0.00|
-| NBC | 0.13 | +-0.05|
+| SEE | 0.707 | +-0.06|
+| OEE | 0.935 | +-0.04|
+| DTC | 0.902 | +-0.02|
+| kNN | 0.955 | +-0.00|
+| SVC | 0.957 | +-0.00|
+| NBC | 0.133 | +-0.05|
 
 ![](figures/imb_IRhigherThan9p1yeast-1-4-5-8_vs_7.png)
 
@@ -255,16 +255,16 @@ Best parameters
 ### yeast-1_vs_7 dataset
 
 Best parameters
-{'a_steps': 0, 'focus': 0}
+{'a_steps': 1, 'approach': 'brute', 'focus': 1, 'fuser': 'equal', 'grain': 32}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.70 | +-0.09|
-| OEE | 0.90 | +-0.03|
-| DTC | 0.89 | +-0.01|
-| kNN | 0.94 | +-0.00|
-| SVC | 0.93 | +-0.00|
-| NBC | 0.26 | +-0.04|
+| SEE | 0.747 | +-0.07|
+| OEE | 0.902 | +-0.02|
+| DTC | 0.895 | +-0.01|
+| kNN | 0.937 | +-0.00|
+| SVC | 0.935 | +-0.00|
+| NBC | 0.259 | +-0.04|
 
 ![](figures/imb_IRhigherThan9p1yeast-1_vs_7.png)
 
@@ -273,16 +273,16 @@ Best parameters
 ### yeast-2_vs_4 dataset
 
 Best parameters
-{'a_steps': 3, 'focus': 5}
+{'a_steps': 3, 'approach': 'brute', 'focus': 3, 'fuser': 'equal', 'grain': 8}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.88 | +-0.02|
-| OEE | 0.96 | +-0.00|
-| DTC | 0.93 | +-0.02|
-| kNN | 0.96 | +-0.01|
-| SVC | 0.90 | +-0.00|
-| NBC | 0.24 | +-0.04|
+| SEE | 0.932 | +-0.03|
+| OEE | 0.955 | +-0.01|
+| DTC | 0.936 | +-0.02|
+| kNN | 0.959 | +-0.01|
+| SVC | 0.901 | +-0.00|
+| NBC | 0.239 | +-0.04|
 
 ![](figures/imb_IRhigherThan9p1yeast-2_vs_4.png)
 
@@ -291,16 +291,16 @@ Best parameters
 ### yeast-2_vs_8 dataset
 
 Best parameters
-{'a_steps': 0, 'focus': 0}
+{'a_steps': 4, 'approach': 'brute', 'focus': 4, 'fuser': 'equal', 'grain': 8}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.80 | +-0.11|
-| OEE | 0.91 | +-0.03|
-| DTC | 0.96 | +-0.01|
-| kNN | 0.98 | +-0.01|
-| SVC | 0.98 | +-0.00|
-| NBC | 0.39 | +-0.30|
+| SEE | 0.832 | +-0.11|
+| OEE | 0.963 | +-0.01|
+| DTC | 0.961 | +-0.01|
+| kNN | 0.979 | +-0.01|
+| SVC | 0.977 | +-0.00|
+| NBC | 0.389 | +-0.30|
 
 ![](figures/imb_IRhigherThan9p1yeast-2_vs_8.png)
 
@@ -309,16 +309,16 @@ Best parameters
 ### yeast4 dataset
 
 Best parameters
-{'a_steps': 4, 'focus': 5}
+{'a_steps': 4, 'approach': 'brute', 'focus': 4, 'fuser': 'equal', 'grain': 8}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.74 | +-0.02|
-| OEE | 0.91 | +-0.02|
-| DTC | 0.95 | +-0.01|
-| kNN | 0.96 | +-0.00|
-| SVC | 0.97 | +-0.00|
-| NBC | 0.17 | +-0.05|
+| SEE | 0.868 | +-0.01|
+| OEE | 0.952 | +-0.02|
+| DTC | 0.949 | +-0.01|
+| kNN | 0.965 | +-0.00|
+| SVC | 0.966 | +-0.00|
+| NBC | 0.168 | +-0.05|
 
 ![](figures/imb_IRhigherThan9p1yeast4.png)
 
@@ -327,16 +327,16 @@ Best parameters
 ### yeast5 dataset
 
 Best parameters
-{'a_steps': 5, 'focus': 5}
+{'a_steps': 2, 'approach': 'random', 'focus': 4, 'fuser': 'equal', 'grain': 8}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.89 | +-0.02|
-| OEE | 0.94 | +-0.01|
-| DTC | 0.98 | +-0.00|
-| kNN | 0.99 | +-0.01|
-| SVC | 0.97 | +-0.00|
-| NBC | 0.67 | +-0.04|
+| SEE | 0.921 | +-0.01|
+| OEE | 0.975 | +-0.01|
+| DTC | 0.982 | +-0.00|
+| kNN | 0.985 | +-0.01|
+| SVC | 0.970 | +-0.00|
+| NBC | 0.671 | +-0.04|
 
 ![](figures/imb_IRhigherThan9p1yeast5.png)
 
@@ -345,16 +345,16 @@ Best parameters
 ### yeast6 dataset
 
 Best parameters
-{'a_steps': 0, 'focus': 0}
+{'a_steps': 4, 'approach': 'brute', 'focus': 4, 'fuser': 'equal', 'grain': 8}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.86 | +-0.03|
-| OEE | 0.92 | +-0.01|
-| DTC | 0.96 | +-0.01|
-| kNN | 0.98 | +-0.01|
-| SVC | 0.98 | +-0.00|
-| NBC | 0.32 | +-0.07|
+| SEE | 0.894 | +-0.01|
+| OEE | 0.957 | +-0.01|
+| DTC | 0.968 | +-0.01|
+| kNN | 0.980 | +-0.01|
+| SVC | 0.976 | +-0.00|
+| NBC | 0.316 | +-0.07|
 
 ![](figures/imb_IRhigherThan9p1yeast6.png)
 
@@ -364,16 +364,16 @@ Best parameters
 ### ecoli-0-1-4-6_vs_5 dataset
 
 Best parameters
-{'a_steps': 0, 'focus': 4}
+{'a_steps': 1, 'approach': 'random', 'focus': 4, 'fuser': 'equal', 'grain': 16}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.98 | +-0.01|
-| OEE | 0.98 | +-0.02|
-| DTC | 0.93 | +-0.03|
-| kNN | 0.98 | +-0.01|
-| SVC | 0.93 | +-0.00|
-| NBC | 0.94 | +-0.05|
+| SEE | 0.982 | +-0.01|
+| OEE | 0.975 | +-0.02|
+| DTC | 0.932 | +-0.03|
+| kNN | 0.982 | +-0.01|
+| SVC | 0.929 | +-0.00|
+| NBC | 0.943 | +-0.05|
 
 ![](figures/imb_IRhigherThan9p2ecoli-0-1-4-6_vs_5.png)
 
@@ -382,16 +382,16 @@ Best parameters
 ### ecoli-0-1-4-7_vs_2-3-5-6 dataset
 
 Best parameters
-{'a_steps': 0, 'focus': 3}
+{'a_steps': 3, 'approach': 'purified', 'focus': 3, 'fuser': 'equal', 'grain': 8}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.90 | +-0.01|
-| OEE | 0.94 | +-0.02|
-| DTC | 0.94 | +-0.02|
-| kNN | 0.97 | +-0.01|
-| SVC | 0.91 | +-0.01|
-| NBC | 0.93 | +-0.01|
+| SEE | 0.929 | +-0.01|
+| OEE | 0.944 | +-0.02|
+| DTC | 0.938 | +-0.01|
+| kNN | 0.973 | +-0.01|
+| SVC | 0.914 | +-0.01|
+| NBC | 0.932 | +-0.01|
 
 ![](figures/imb_IRhigherThan9p2ecoli-0-1-4-7_vs_2-3-5-6.png)
 
@@ -400,16 +400,16 @@ Best parameters
 ### ecoli-0-1-4-7_vs_5-6 dataset
 
 Best parameters
-{'a_steps': 0, 'focus': 5}
+{'a_steps': 3, 'approach': 'random', 'focus': 3, 'fuser': 'theta', 'grain': 8}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.94 | +-0.03|
-| OEE | 0.95 | +-0.02|
-| DTC | 0.95 | +-0.02|
-| kNN | 0.97 | +-0.02|
-| SVC | 0.92 | +-0.00|
-| NBC | 0.95 | +-0.03|
+| SEE | 0.940 | +-0.02|
+| OEE | 0.958 | +-0.02|
+| DTC | 0.952 | +-0.02|
+| kNN | 0.973 | +-0.02|
+| SVC | 0.925 | +-0.00|
+| NBC | 0.952 | +-0.03|
 
 ![](figures/imb_IRhigherThan9p2ecoli-0-1-4-7_vs_5-6.png)
 
@@ -418,16 +418,16 @@ Best parameters
 ### ecoli-0-1_vs_2-3-5 dataset
 
 Best parameters
-{'a_steps': 0, 'focus': 4}
+{'a_steps': 2, 'approach': 'purified', 'focus': 4, 'fuser': 'equal', 'grain': 16}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.96 | +-0.02|
-| OEE | 0.96 | +-0.03|
-| DTC | 0.92 | +-0.04|
-| kNN | 0.97 | +-0.01|
-| SVC | 0.90 | +-0.01|
-| NBC | 0.93 | +-0.04|
+| SEE | 0.963 | +-0.02|
+| OEE | 0.963 | +-0.02|
+| DTC | 0.914 | +-0.02|
+| kNN | 0.967 | +-0.01|
+| SVC | 0.902 | +-0.01|
+| NBC | 0.926 | +-0.04|
 
 ![](figures/imb_IRhigherThan9p2ecoli-0-1_vs_2-3-5.png)
 
@@ -436,16 +436,16 @@ Best parameters
 ### ecoli-0-1_vs_5 dataset
 
 Best parameters
-{'a_steps': 0, 'focus': 4}
+{'a_steps': 4, 'approach': 'random', 'focus': 4, 'fuser': 'equal', 'grain': 16}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.97 | +-0.02|
-| OEE | 0.97 | +-0.02|
-| DTC | 0.96 | +-0.03|
-| kNN | 0.98 | +-0.02|
-| SVC | 0.92 | +-0.00|
-| NBC | 0.93 | +-0.06|
+| SEE | 0.979 | +-0.02|
+| OEE | 0.979 | +-0.01|
+| DTC | 0.958 | +-0.03|
+| kNN | 0.983 | +-0.02|
+| SVC | 0.917 | +-0.00|
+| NBC | 0.933 | +-0.06|
 
 ![](figures/imb_IRhigherThan9p2ecoli-0-1_vs_5.png)
 
@@ -454,16 +454,16 @@ Best parameters
 ### ecoli-0-2-3-4_vs_5 dataset
 
 Best parameters
-{'a_steps': 1, 'focus': 4}
+{'a_steps': 1, 'approach': 'purified', 'focus': 3, 'fuser': 'equal', 'grain': 8}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.98 | +-0.02|
-| OEE | 0.98 | +-0.02|
-| DTC | 0.95 | +-0.02|
-| kNN | 0.97 | +-0.04|
-| SVC | 0.90 | +-0.00|
-| NBC | 0.68 | +-0.15|
+| SEE | 0.970 | +-0.04|
+| OEE | 0.950 | +-0.02|
+| DTC | 0.936 | +-0.03|
+| kNN | 0.970 | +-0.04|
+| SVC | 0.901 | +-0.00|
+| NBC | 0.677 | +-0.15|
 
 ![](figures/imb_IRhigherThan9p2ecoli-0-2-3-4_vs_5.png)
 
@@ -472,16 +472,16 @@ Best parameters
 ### ecoli-0-2-6-7_vs_3-5 dataset
 
 Best parameters
-{'a_steps': 1, 'focus': 5}
+{'a_steps': 1, 'approach': 'purified', 'focus': 4, 'fuser': 'theta', 'grain': 8}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.90 | +-0.06|
-| OEE | 0.95 | +-0.02|
-| DTC | 0.92 | +-0.08|
-| kNN | 0.96 | +-0.00|
-| SVC | 0.90 | +-0.01|
-| NBC | 0.89 | +-0.02|
+| SEE | 0.911 | +-0.05|
+| OEE | 0.942 | +-0.02|
+| DTC | 0.915 | +-0.07|
+| kNN | 0.955 | +-0.00|
+| SVC | 0.902 | +-0.01|
+| NBC | 0.893 | +-0.02|
 
 ![](figures/imb_IRhigherThan9p2ecoli-0-2-6-7_vs_3-5.png)
 
@@ -490,16 +490,16 @@ Best parameters
 ### ecoli-0-3-4-6_vs_5 dataset
 
 Best parameters
-{'a_steps': 1, 'focus': 4}
+{'a_steps': 4, 'approach': 'purified', 'focus': 4, 'fuser': 'theta', 'grain': 8}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.97 | +-0.02|
-| OEE | 0.97 | +-0.02|
-| DTC | 0.94 | +-0.04|
-| kNN | 0.98 | +-0.02|
-| SVC | 0.90 | +-0.00|
-| NBC | 0.77 | +-0.10|
+| SEE | 0.976 | +-0.03|
+| OEE | 0.946 | +-0.03|
+| DTC | 0.937 | +-0.04|
+| kNN | 0.976 | +-0.02|
+| SVC | 0.902 | +-0.00|
+| NBC | 0.771 | +-0.10|
 
 ![](figures/imb_IRhigherThan9p2ecoli-0-3-4-6_vs_5.png)
 
@@ -508,16 +508,16 @@ Best parameters
 ### ecoli-0-3-4-7_vs_5-6 dataset
 
 Best parameters
-{'a_steps': 2, 'focus': 5}
+{'a_steps': 3, 'approach': 'brute', 'focus': 4, 'fuser': 'theta', 'grain': 8}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.91 | +-0.04|
-| OEE | 0.95 | +-0.01|
-| DTC | 0.94 | +-0.02|
-| kNN | 0.97 | +-0.03|
-| SVC | 0.90 | +-0.00|
-| NBC | 0.76 | +-0.10|
+| SEE | 0.926 | +-0.02|
+| OEE | 0.934 | +-0.02|
+| DTC | 0.934 | +-0.02|
+| kNN | 0.969 | +-0.03|
+| SVC | 0.903 | +-0.00|
+| NBC | 0.755 | +-0.10|
 
 ![](figures/imb_IRhigherThan9p2ecoli-0-3-4-7_vs_5-6.png)
 
@@ -526,16 +526,16 @@ Best parameters
 ### ecoli-0-3-4_vs_5 dataset
 
 Best parameters
-{'a_steps': 5, 'focus': 5}
+{'a_steps': 1, 'approach': 'brute', 'focus': 2, 'fuser': 'equal', 'grain': 8}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.97 | +-0.02|
-| OEE | 0.96 | +-0.03|
-| DTC | 0.93 | +-0.03|
-| kNN | 0.97 | +-0.02|
-| SVC | 0.90 | +-0.00|
-| NBC | 0.75 | +-0.15|
+| SEE | 0.975 | +-0.02|
+| OEE | 0.970 | +-0.03|
+| DTC | 0.935 | +-0.03|
+| kNN | 0.975 | +-0.02|
+| SVC | 0.900 | +-0.00|
+| NBC | 0.750 | +-0.15|
 
 ![](figures/imb_IRhigherThan9p2ecoli-0-3-4_vs_5.png)
 
@@ -544,16 +544,16 @@ Best parameters
 ### ecoli-0-4-6_vs_5 dataset
 
 Best parameters
-{'a_steps': 1, 'focus': 4}
+{'a_steps': 1, 'approach': 'random', 'focus': 4, 'fuser': 'theta', 'grain': 16}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.97 | +-0.02|
-| OEE | 0.98 | +-0.02|
-| DTC | 0.95 | +-0.02|
-| kNN | 0.98 | +-0.02|
-| SVC | 0.90 | +-0.00|
-| NBC | 0.90 | +-0.12|
+| SEE | 0.966 | +-0.02|
+| OEE | 0.975 | +-0.02|
+| DTC | 0.941 | +-0.02|
+| kNN | 0.980 | +-0.02|
+| SVC | 0.901 | +-0.00|
+| NBC | 0.897 | +-0.12|
 
 ![](figures/imb_IRhigherThan9p2ecoli-0-4-6_vs_5.png)
 
@@ -562,16 +562,16 @@ Best parameters
 ### ecoli-0-6-7_vs_3-5 dataset
 
 Best parameters
-{'a_steps': 0, 'focus': 5}
+{'a_steps': 1, 'approach': 'brute', 'focus': 4, 'fuser': 'theta', 'grain': 8}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.93 | +-0.02|
-| OEE | 0.95 | +-0.04|
-| DTC | 0.96 | +-0.04|
-| kNN | 0.96 | +-0.04|
-| SVC | 0.90 | +-0.01|
-| NBC | 0.88 | +-0.01|
+| SEE | 0.937 | +-0.03|
+| OEE | 0.946 | +-0.03|
+| DTC | 0.951 | +-0.04|
+| kNN | 0.964 | +-0.04|
+| SVC | 0.901 | +-0.01|
+| NBC | 0.883 | +-0.01|
 
 ![](figures/imb_IRhigherThan9p2ecoli-0-6-7_vs_3-5.png)
 
@@ -580,16 +580,16 @@ Best parameters
 ### ecoli-0-6-7_vs_5 dataset
 
 Best parameters
-{'a_steps': 0, 'focus': 4}
+{'a_steps': 1, 'approach': 'random', 'focus': 4, 'fuser': 'theta', 'grain': 8}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.96 | +-0.02|
-| OEE | 0.96 | +-0.03|
-| DTC | 0.95 | +-0.03|
-| kNN | 0.97 | +-0.01|
-| SVC | 0.91 | +-0.00|
-| NBC | 0.89 | +-0.09|
+| SEE | 0.941 | +-0.04|
+| OEE | 0.959 | +-0.02|
+| DTC | 0.950 | +-0.04|
+| kNN | 0.968 | +-0.01|
+| SVC | 0.909 | +-0.00|
+| NBC | 0.886 | +-0.09|
 
 ![](figures/imb_IRhigherThan9p2ecoli-0-6-7_vs_5.png)
 
@@ -598,16 +598,16 @@ Best parameters
 ### glass-0-1-4-6_vs_2 dataset
 
 Best parameters
-{'a_steps': 1, 'focus': 0}
+{'a_steps': 1, 'approach': 'random', 'focus': 2, 'fuser': 'equal', 'grain': 8}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.70 | +-0.15|
-| OEE | 0.81 | +-0.07|
-| DTC | 0.89 | +-0.03|
-| kNN | 0.90 | +-0.02|
-| SVC | 0.92 | +-0.01|
-| NBC | 0.43 | +-0.05|
+| SEE | 0.732 | +-0.07|
+| OEE | 0.795 | +-0.06|
+| DTC | 0.883 | +-0.04|
+| kNN | 0.898 | +-0.02|
+| SVC | 0.917 | +-0.01|
+| NBC | 0.434 | +-0.05|
 
 ![](figures/imb_IRhigherThan9p2glass-0-1-4-6_vs_2.png)
 
@@ -616,16 +616,16 @@ Best parameters
 ### glass-0-1-5_vs_2 dataset
 
 Best parameters
-{'a_steps': 0, 'focus': 0}
+{'a_steps': 2, 'approach': 'brute', 'focus': 1, 'fuser': 'theta', 'grain': 32}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.65 | +-0.04|
-| OEE | 0.81 | +-0.06|
-| DTC | 0.84 | +-0.06|
-| kNN | 0.90 | +-0.03|
-| SVC | 0.90 | +-0.01|
-| NBC | 0.45 | +-0.16|
+| SEE | 0.588 | +-0.06|
+| OEE | 0.832 | +-0.05|
+| DTC | 0.814 | +-0.09|
+| kNN | 0.895 | +-0.03|
+| SVC | 0.901 | +-0.01|
+| NBC | 0.452 | +-0.16|
 
 ![](figures/imb_IRhigherThan9p2glass-0-1-5_vs_2.png)
 
@@ -634,16 +634,16 @@ Best parameters
 ### glass-0-4_vs_5 dataset
 
 Best parameters
-{'a_steps': 0, 'focus': 4}
+{'a_steps': 3, 'approach': 'purified', 'focus': 4, 'fuser': 'equal', 'grain': 32}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.86 | +-0.09|
-| OEE | 0.92 | +-0.04|
-| DTC | 0.99 | +-0.02|
-| kNN | 0.97 | +-0.03|
-| SVC | 0.92 | +-0.03|
-| NBC | 0.99 | +-0.02|
+| SEE | 0.891 | +-0.10|
+| OEE | 0.935 | +-0.04|
+| DTC | 0.989 | +-0.02|
+| kNN | 0.967 | +-0.03|
+| SVC | 0.923 | +-0.03|
+| NBC | 0.989 | +-0.02|
 
 ![](figures/imb_IRhigherThan9p2glass-0-4_vs_5.png)
 
@@ -652,16 +652,16 @@ Best parameters
 ### glass-0-6_vs_5 dataset
 
 Best parameters
-{'a_steps': 0, 'focus': 5}
+{'a_steps': 1, 'approach': 'brute', 'focus': 4, 'fuser': 'equal', 'grain': 16}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.97 | +-0.02|
-| OEE | 0.93 | +-0.02|
-| DTC | 0.97 | +-0.02|
-| kNN | 0.95 | +-0.03|
-| SVC | 0.94 | +-0.02|
-| NBC | 0.98 | +-0.02|
+| SEE | 0.991 | +-0.02|
+| OEE | 0.944 | +-0.03|
+| DTC | 0.972 | +-0.02|
+| kNN | 0.945 | +-0.03|
+| SVC | 0.935 | +-0.02|
+| NBC | 0.981 | +-0.02|
 
 ![](figures/imb_IRhigherThan9p2glass-0-6_vs_5.png)
 
@@ -670,16 +670,16 @@ Best parameters
 ### led7digit-0-2-4-5-6-7-8-9_vs_1 dataset
 
 Best parameters
-{'a_steps': 0, 'focus': 0}
+{'a_steps': 1, 'approach': 'brute', 'focus': 1, 'fuser': 'equal', 'grain': 8}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.84 | +-0.05|
-| OEE | 0.87 | +-0.05|
-| DTC | 0.96 | +-0.02|
-| kNN | 0.93 | +-0.02|
-| SVC | 0.97 | +-0.02|
-| NBC | 0.88 | +-0.06|
+| SEE | 0.858 | +-0.05|
+| OEE | 0.876 | +-0.05|
+| DTC | 0.966 | +-0.02|
+| kNN | 0.932 | +-0.02|
+| SVC | 0.968 | +-0.02|
+| NBC | 0.880 | +-0.06|
 
 ![](figures/imb_IRhigherThan9p2led7digit-0-2-4-5-6-7-8-9_vs_1.png)
 
@@ -688,16 +688,16 @@ Best parameters
 ### yeast-0-2-5-6_vs_3-7-8-9 dataset
 
 Best parameters
-{'a_steps': 5, 'focus': 5}
+{'a_steps': 3, 'approach': 'brute', 'focus': 4, 'fuser': 'equal', 'grain': 8}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.72 | +-0.05|
-| OEE | 0.85 | +-0.03|
-| DTC | 0.89 | +-0.01|
-| kNN | 0.94 | +-0.02|
-| SVC | 0.90 | +-0.00|
-| NBC | 0.92 | +-0.02|
+| SEE | 0.829 | +-0.02|
+| OEE | 0.923 | +-0.01|
+| DTC | 0.894 | +-0.01|
+| kNN | 0.937 | +-0.02|
+| SVC | 0.902 | +-0.00|
+| NBC | 0.915 | +-0.02|
 
 ![](figures/imb_IRhigherThan9p2yeast-0-2-5-6_vs_3-7-8-9.png)
 
@@ -706,16 +706,16 @@ Best parameters
 ### yeast-0-2-5-7-9_vs_3-6-8 dataset
 
 Best parameters
-{'a_steps': 5, 'focus': 5}
+{'a_steps': 1, 'approach': 'purified', 'focus': 4, 'fuser': 'equal', 'grain': 8}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.85 | +-0.03|
-| OEE | 0.91 | +-0.02|
-| DTC | 0.94 | +-0.01|
-| kNN | 0.97 | +-0.00|
-| SVC | 0.90 | +-0.00|
-| NBC | 0.25 | +-0.05|
+| SEE | 0.910 | +-0.02|
+| OEE | 0.948 | +-0.01|
+| DTC | 0.942 | +-0.01|
+| kNN | 0.969 | +-0.00|
+| SVC | 0.901 | +-0.00|
+| NBC | 0.246 | +-0.05|
 
 ![](figures/imb_IRhigherThan9p2yeast-0-2-5-7-9_vs_3-6-8.png)
 
@@ -724,16 +724,16 @@ Best parameters
 ### yeast-0-3-5-9_vs_7-8 dataset
 
 Best parameters
-{'a_steps': 0, 'focus': 0}
+{'a_steps': 4, 'approach': 'brute', 'focus': 4, 'fuser': 'theta', 'grain': 8}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.78 | +-0.06|
-| OEE | 0.82 | +-0.03|
-| DTC | 0.87 | +-0.03|
-| kNN | 0.91 | +-0.01|
-| SVC | 0.91 | +-0.00|
-| NBC | 0.20 | +-0.01|
+| SEE | 0.848 | +-0.03|
+| OEE | 0.907 | +-0.01|
+| DTC | 0.864 | +-0.04|
+| kNN | 0.911 | +-0.01|
+| SVC | 0.905 | +-0.00|
+| NBC | 0.202 | +-0.01|
 
 ![](figures/imb_IRhigherThan9p2yeast-0-3-5-9_vs_7-8.png)
 
@@ -743,16 +743,16 @@ Best parameters
 ### ecoli-0_vs_1 dataset
 
 Best parameters
-{'a_steps': 1, 'focus': 1}
+{'a_steps': 1, 'approach': 'random', 'focus': 3, 'fuser': 'theta', 'grain': 32}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.99 | +-0.02|
-| OEE | 0.97 | +-0.03|
-| DTC | 0.96 | +-0.03|
-| kNN | 0.99 | +-0.02|
-| SVC | 0.96 | +-0.02|
-| NBC | 0.95 | +-0.02|
+| SEE | 0.982 | +-0.02|
+| OEE | 0.982 | +-0.02|
+| DTC | 0.973 | +-0.03|
+| kNN | 0.986 | +-0.02|
+| SVC | 0.964 | +-0.02|
+| NBC | 0.945 | +-0.02|
 
 ![](figures/imb_IRlowerThan9ecoli-0_vs_1.png)
 
@@ -761,16 +761,16 @@ Best parameters
 ### ecoli1 dataset
 
 Best parameters
-{'a_steps': 2, 'focus': 2}
+{'a_steps': 1, 'approach': 'random', 'focus': 3, 'fuser': 'theta', 'grain': 16}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.87 | +-0.04|
-| OEE | 0.87 | +-0.04|
-| DTC | 0.88 | +-0.03|
-| kNN | 0.93 | +-0.02|
-| SVC | 0.86 | +-0.04|
-| NBC | 0.65 | +-0.15|
+| SEE | 0.869 | +-0.04|
+| OEE | 0.872 | +-0.04|
+| DTC | 0.881 | +-0.03|
+| kNN | 0.929 | +-0.02|
+| SVC | 0.863 | +-0.04|
+| NBC | 0.653 | +-0.15|
 
 ![](figures/imb_IRlowerThan9ecoli1.png)
 
@@ -779,16 +779,16 @@ Best parameters
 ### ecoli2 dataset
 
 Best parameters
-{'a_steps': 1, 'focus': 5}
+{'a_steps': 2, 'approach': 'random', 'focus': 4, 'fuser': 'theta', 'grain': 8}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.91 | +-0.05|
-| OEE | 0.89 | +-0.05|
-| DTC | 0.91 | +-0.02|
-| kNN | 0.97 | +-0.02|
-| SVC | 0.85 | +-0.01|
-| NBC | 0.35 | +-0.11|
+| SEE | 0.905 | +-0.05|
+| OEE | 0.902 | +-0.02|
+| DTC | 0.920 | +-0.02|
+| kNN | 0.967 | +-0.02|
+| SVC | 0.845 | +-0.01|
+| NBC | 0.351 | +-0.11|
 
 ![](figures/imb_IRlowerThan9ecoli2.png)
 
@@ -797,16 +797,16 @@ Best parameters
 ### ecoli3 dataset
 
 Best parameters
-{'a_steps': 4, 'focus': 5}
+{'a_steps': 1, 'approach': 'random', 'focus': 2, 'fuser': 'theta', 'grain': 8}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.83 | +-0.03|
-| OEE | 0.91 | +-0.03|
-| DTC | 0.89 | +-0.03|
-| kNN | 0.93 | +-0.02|
-| SVC | 0.90 | +-0.00|
-| NBC | 0.77 | +-0.05|
+| SEE | 0.842 | +-0.03|
+| OEE | 0.922 | +-0.03|
+| DTC | 0.887 | +-0.03|
+| kNN | 0.928 | +-0.02|
+| SVC | 0.896 | +-0.00|
+| NBC | 0.771 | +-0.05|
 
 ![](figures/imb_IRlowerThan9ecoli3.png)
 
@@ -815,16 +815,16 @@ Best parameters
 ### glass-0-1-2-3_vs_4-5-6 dataset
 
 Best parameters
-{'a_steps': 4, 'focus': 0}
+{'a_steps': 1, 'approach': 'random', 'focus': 1, 'fuser': 'theta', 'grain': 8}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.90 | +-0.04|
-| OEE | 0.91 | +-0.04|
-| DTC | 0.93 | +-0.03|
-| kNN | 0.92 | +-0.02|
-| SVC | 0.94 | +-0.03|
-| NBC | 0.90 | +-0.05|
+| SEE | 0.911 | +-0.03|
+| OEE | 0.920 | +-0.03|
+| DTC | 0.949 | +-0.03|
+| kNN | 0.916 | +-0.02|
+| SVC | 0.944 | +-0.03|
+| NBC | 0.902 | +-0.05|
 
 ![](figures/imb_IRlowerThan9glass-0-1-2-3_vs_4-5-6.png)
 
@@ -833,16 +833,16 @@ Best parameters
 ### glass0 dataset
 
 Best parameters
-{'a_steps': 0, 'focus': 0}
+{'a_steps': 1, 'approach': 'brute', 'focus': 1, 'fuser': 'equal', 'grain': 32}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.64 | +-0.04|
-| OEE | 0.79 | +-0.06|
-| DTC | 0.78 | +-0.05|
-| kNN | 0.76 | +-0.09|
-| SVC | 0.74 | +-0.04|
-| NBC | 0.63 | +-0.02|
+| SEE | 0.766 | +-0.03|
+| OEE | 0.860 | +-0.05|
+| DTC | 0.799 | +-0.04|
+| kNN | 0.762 | +-0.09|
+| SVC | 0.743 | +-0.04|
+| NBC | 0.631 | +-0.02|
 
 ![](figures/imb_IRlowerThan9glass0.png)
 
@@ -851,16 +851,16 @@ Best parameters
 ### glass1 dataset
 
 Best parameters
-{'a_steps': 0, 'focus': 0}
+{'a_steps': 1, 'approach': 'random', 'focus': 1, 'fuser': 'theta', 'grain': 32}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.61 | +-0.04|
-| OEE | 0.76 | +-0.05|
-| DTC | 0.74 | +-0.05|
-| kNN | 0.79 | +-0.08|
-| SVC | 0.77 | +-0.04|
-| NBC | 0.60 | +-0.03|
+| SEE | 0.668 | +-0.05|
+| OEE | 0.776 | +-0.04|
+| DTC | 0.748 | +-0.06|
+| kNN | 0.786 | +-0.08|
+| SVC | 0.771 | +-0.04|
+| NBC | 0.603 | +-0.03|
 
 ![](figures/imb_IRlowerThan9glass1.png)
 
@@ -869,16 +869,16 @@ Best parameters
 ### glass6 dataset
 
 Best parameters
-{'a_steps': 0, 'focus': 4}
+{'a_steps': 1, 'approach': 'brute', 'focus': 4, 'fuser': 'equal', 'grain': 16}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.91 | +-0.06|
-| OEE | 0.90 | +-0.04|
-| DTC | 0.92 | +-0.02|
-| kNN | 0.95 | +-0.02|
-| SVC | 0.96 | +-0.02|
-| NBC | 0.94 | +-0.04|
+| SEE | 0.930 | +-0.03|
+| OEE | 0.930 | +-0.01|
+| DTC | 0.925 | +-0.01|
+| kNN | 0.949 | +-0.02|
+| SVC | 0.963 | +-0.02|
+| NBC | 0.944 | +-0.04|
 
 ![](figures/imb_IRlowerThan9glass6.png)
 
@@ -887,16 +887,16 @@ Best parameters
 ### iris0 dataset
 
 Best parameters
-{'a_steps': 0, 'focus': 0}
+{'a_steps': 1, 'approach': 'brute', 'focus': 1, 'fuser': 'equal', 'grain': 8}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 1.00 | +-0.00|
-| OEE | 1.00 | +-0.00|
-| DTC | 1.00 | +-0.00|
-| kNN | 1.00 | +-0.00|
-| SVC | 1.00 | +-0.00|
-| NBC | 1.00 | +-0.00|
+| SEE | 1.000 | +-0.00|
+| OEE | 1.000 | +-0.00|
+| DTC | 1.000 | +-0.00|
+| kNN | 1.000 | +-0.00|
+| SVC | 1.000 | +-0.00|
+| NBC | 1.000 | +-0.00|
 
 ![](figures/imb_IRlowerThan9iris0.png)
 
@@ -905,16 +905,16 @@ Best parameters
 ### new-thyroid1 dataset
 
 Best parameters
-{'a_steps': 0, 'focus': 2}
+{'a_steps': 1, 'approach': 'random', 'focus': 2, 'fuser': 'theta', 'grain': 16}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.97 | +-0.03|
-| OEE | 0.99 | +-0.02|
-| DTC | 0.96 | +-0.03|
-| kNN | 0.95 | +-0.03|
-| SVC | 0.89 | +-0.02|
-| NBC | 0.97 | +-0.03|
+| SEE | 0.977 | +-0.03|
+| OEE | 0.972 | +-0.03|
+| DTC | 0.977 | +-0.03|
+| kNN | 0.953 | +-0.03|
+| SVC | 0.888 | +-0.02|
+| NBC | 0.972 | +-0.03|
 
 ![](figures/imb_IRlowerThan9new-thyroid1.png)
 
@@ -923,16 +923,16 @@ Best parameters
 ### new-thyroid2 dataset
 
 Best parameters
-{'a_steps': 3, 'focus': 3}
+{'a_steps': 2, 'approach': 'brute', 'focus': 4, 'fuser': 'equal', 'grain': 32}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.99 | +-0.02|
-| OEE | 0.98 | +-0.02|
-| DTC | 0.95 | +-0.03|
-| kNN | 0.95 | +-0.01|
-| SVC | 0.88 | +-0.02|
-| NBC | 0.98 | +-0.02|
+| SEE | 0.986 | +-0.02|
+| OEE | 0.972 | +-0.03|
+| DTC | 0.958 | +-0.02|
+| kNN | 0.953 | +-0.01|
+| SVC | 0.884 | +-0.02|
+| NBC | 0.977 | +-0.02|
 
 ![](figures/imb_IRlowerThan9new-thyroid2.png)
 
@@ -941,16 +941,16 @@ Best parameters
 ### pima dataset
 
 Best parameters
-{'a_steps': 5, 'focus': 5}
+{'a_steps': 2, 'approach': 'random', 'focus': 3, 'fuser': 'equal', 'grain': 8}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.71 | +-0.03|
-| OEE | 0.75 | +-0.03|
-| DTC | 0.71 | +-0.02|
-| kNN | 0.72 | +-0.03|
-| SVC | 0.65 | +-0.00|
-| NBC | 0.76 | +-0.01|
+| SEE | 0.643 | +-0.04|
+| OEE | 0.768 | +-0.02|
+| DTC | 0.707 | +-0.03|
+| kNN | 0.721 | +-0.03|
+| SVC | 0.651 | +-0.00|
+| NBC | 0.756 | +-0.01|
 
 ![](figures/imb_IRlowerThan9pima.png)
 
@@ -959,16 +959,16 @@ Best parameters
 ### wisconsin dataset
 
 Best parameters
-{'a_steps': 1, 'focus': 3}
+{'a_steps': 1, 'approach': 'brute', 'focus': 3, 'fuser': 'theta', 'grain': 16}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.96 | +-0.01|
-| OEE | 0.98 | +-0.00|
-| DTC | 0.94 | +-0.02|
-| kNN | 0.97 | +-0.01|
-| SVC | 0.96 | +-0.01|
-| NBC | 0.96 | +-0.01|
+| SEE | 0.972 | +-0.01|
+| OEE | 0.975 | +-0.00|
+| DTC | 0.940 | +-0.02|
+| kNN | 0.972 | +-0.01|
+| SVC | 0.965 | +-0.01|
+| NBC | 0.965 | +-0.01|
 
 ![](figures/imb_IRlowerThan9wisconsin.png)
 
@@ -977,16 +977,16 @@ Best parameters
 ### yeast1 dataset
 
 Best parameters
-{'a_steps': 0, 'focus': 2}
+{'a_steps': 1, 'approach': 'brute', 'focus': 4, 'fuser': 'equal', 'grain': 32}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.65 | +-0.03|
-| OEE | 0.69 | +-0.05|
-| DTC | 0.72 | +-0.02|
-| kNN | 0.74 | +-0.02|
-| SVC | 0.72 | +-0.01|
-| NBC | 0.32 | +-0.01|
+| SEE | 0.692 | +-0.04|
+| OEE | 0.705 | +-0.02|
+| DTC | 0.723 | +-0.02|
+| kNN | 0.739 | +-0.02|
+| SVC | 0.720 | +-0.01|
+| NBC | 0.321 | +-0.01|
 
 ![](figures/imb_IRlowerThan9yeast1.png)
 
@@ -995,16 +995,16 @@ Best parameters
 ### yeast3 dataset
 
 Best parameters
-{'a_steps': 5, 'focus': 5}
+{'a_steps': 4, 'approach': 'purified', 'focus': 3, 'fuser': 'equal', 'grain': 8}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.90 | +-0.02|
-| OEE | 0.92 | +-0.02|
-| DTC | 0.93 | +-0.01|
-| kNN | 0.95 | +-0.01|
-| SVC | 0.89 | +-0.00|
-| NBC | 0.31 | +-0.07|
+| SEE | 0.894 | +-0.01|
+| OEE | 0.930 | +-0.02|
+| DTC | 0.934 | +-0.01|
+| kNN | 0.947 | +-0.01|
+| SVC | 0.890 | +-0.00|
+| NBC | 0.311 | +-0.07|
 
 ![](figures/imb_IRlowerThan9yeast3.png)
 
@@ -1014,16 +1014,16 @@ Best parameters
 ### balance dataset
 
 Best parameters
-{'a_steps': 0, 'focus': 4}
+{'a_steps': 1, 'approach': 'brute', 'focus': 4, 'fuser': 'equal', 'grain': 16}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.67 | +-0.06|
-| OEE | 0.65 | +-0.05|
-| DTC | 0.77 | +-0.02|
-| kNN | 0.83 | +-0.03|
-| SVC | 0.90 | +-0.01|
-| NBC | 0.89 | +-0.01|
+| SEE | 0.690 | +-0.08|
+| OEE | 0.637 | +-0.06|
+| DTC | 0.768 | +-0.02|
+| kNN | 0.830 | +-0.03|
+| SVC | 0.901 | +-0.01|
+| NBC | 0.893 | +-0.01|
 
 ![](figures/imb_multiclassbalance.png)
 
@@ -1032,16 +1032,16 @@ Best parameters
 ### contraceptive dataset
 
 Best parameters
-{'a_steps': 4, 'focus': 0}
+{'a_steps': 4, 'approach': 'brute', 'focus': 1, 'fuser': 'theta', 'grain': 16}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.52 | +-0.03|
-| OEE | 0.53 | +-0.02|
-| DTC | 0.49 | +-0.02|
-| kNN | 0.52 | +-0.02|
-| SVC | 0.57 | +-0.01|
-| NBC | 0.47 | +-0.03|
+| SEE | 0.491 | +-0.02|
+| OEE | 0.535 | +-0.02|
+| DTC | 0.478 | +-0.03|
+| kNN | 0.521 | +-0.02|
+| SVC | 0.570 | +-0.01|
+| NBC | 0.471 | +-0.03|
 
 ![](figures/imb_multiclasscontraceptive.png)
 
@@ -1050,16 +1050,16 @@ Best parameters
 ### ecoli dataset
 
 Best parameters
-{'a_steps': 2, 'focus': 3}
+{'a_steps': 2, 'approach': 'purified', 'focus': 1, 'fuser': 'equal', 'grain': 8}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.81 | +-0.03|
-| OEE | 0.82 | +-0.03|
-| DTC | 0.75 | +-0.05|
-| kNN | 0.82 | +-0.03|
-| SVC | 0.43 | +-0.01|
-| NBC | 0.60 | +-0.05|
+| SEE | 0.833 | +-0.03|
+| OEE | 0.821 | +-0.03|
+| DTC | 0.768 | +-0.04|
+| kNN | 0.816 | +-0.03|
+| SVC | 0.426 | +-0.01|
+| NBC | 0.601 | +-0.05|
 
 ![](figures/imb_multiclassecoli.png)
 
@@ -1068,16 +1068,16 @@ Best parameters
 ### glass dataset
 
 Best parameters
-{'a_steps': 2, 'focus': 0}
+{'a_steps': 2, 'approach': 'brute', 'focus': 2, 'fuser': 'theta', 'grain': 32}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.47 | +-0.04|
-| OEE | 0.61 | +-0.03|
-| DTC | 0.68 | +-0.06|
-| kNN | 0.65 | +-0.04|
-| SVC | 0.67 | +-0.03|
-| NBC | 0.43 | +-0.08|
+| SEE | 0.528 | +-0.05|
+| OEE | 0.645 | +-0.02|
+| DTC | 0.678 | +-0.06|
+| kNN | 0.650 | +-0.04|
+| SVC | 0.673 | +-0.03|
+| NBC | 0.429 | +-0.08|
 
 ![](figures/imb_multiclassglass.png)
 
@@ -1086,16 +1086,16 @@ Best parameters
 ### hayes-roth dataset
 
 Best parameters
-{'a_steps': 2, 'focus': 0}
+{'a_steps': 1, 'approach': 'brute', 'focus': 1, 'fuser': 'theta', 'grain': 8}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.65 | +-0.09|
-| OEE | 0.80 | +-0.03|
-| DTC | 0.84 | +-0.06|
-| kNN | 0.64 | +-0.05|
-| SVC | 0.85 | +-0.06|
-| NBC | 0.72 | +-0.07|
+| SEE | 0.644 | +-0.06|
+| OEE | 0.773 | +-0.02|
+| DTC | 0.840 | +-0.06|
+| kNN | 0.644 | +-0.05|
+| SVC | 0.848 | +-0.06|
+| NBC | 0.719 | +-0.07|
 
 ![](figures/imb_multiclasshayes-roth.png)
 
@@ -1104,16 +1104,16 @@ Best parameters
 ### new-thyroid dataset
 
 Best parameters
-{'a_steps': 2, 'focus': 3}
+{'a_steps': 2, 'approach': 'brute', 'focus': 4, 'fuser': 'equal', 'grain': 32}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.96 | +-0.04|
-| OEE | 0.94 | +-0.02|
-| DTC | 0.93 | +-0.04|
-| kNN | 0.93 | +-0.02|
-| SVC | 0.75 | +-0.03|
-| NBC | 0.96 | +-0.01|
+| SEE | 0.949 | +-0.04|
+| OEE | 0.958 | +-0.02|
+| DTC | 0.944 | +-0.01|
+| kNN | 0.930 | +-0.02|
+| SVC | 0.749 | +-0.03|
+| NBC | 0.963 | +-0.01|
 
 ![](figures/imb_multiclassnew-thyroid.png)
 
@@ -1122,16 +1122,16 @@ Best parameters
 ### pageblocks dataset
 
 Best parameters
-{'a_steps': 0, 'focus': 5}
+{'a_steps': 1, 'approach': 'brute', 'focus': 1, 'fuser': 'equal', 'grain': 32}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.72 | +-0.06|
-| OEE | 0.81 | +-0.09|
-| DTC | 0.95 | +-0.02|
-| kNN | 0.94 | +-0.01|
-| SVC | 0.90 | +-0.01|
-| NBC | 0.92 | +-0.02|
+| SEE | 0.746 | +-0.03|
+| OEE | 0.885 | +-0.04|
+| DTC | 0.945 | +-0.02|
+| kNN | 0.938 | +-0.01|
+| SVC | 0.901 | +-0.01|
+| NBC | 0.918 | +-0.02|
 
 ![](figures/imb_multiclasspageblocks.png)
 
@@ -1140,16 +1140,16 @@ Best parameters
 ### shuttle dataset
 
 Best parameters
-{'a_steps': 0, 'focus': 0}
+{'a_steps': 1, 'approach': 'brute', 'focus': 1, 'fuser': 'equal', 'grain': 32}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.75 | +-0.04|
-| OEE | 0.88 | +-0.05|
-| DTC | 1.00 | +-0.00|
-| kNN | 0.99 | +-0.00|
-| SVC | 0.83 | +-0.01|
-| NBC | 0.90 | +-0.02|
+| SEE | 0.786 | +-0.02|
+| OEE | 0.920 | +-0.03|
+| DTC | 0.997 | +-0.00|
+| kNN | 0.992 | +-0.00|
+| SVC | 0.830 | +-0.01|
+| NBC | 0.903 | +-0.02|
 
 ![](figures/imb_multiclassshuttle.png)
 
@@ -1158,16 +1158,16 @@ Best parameters
 ### thyroid dataset
 
 Best parameters
-{'a_steps': 5, 'focus': 5}
+{'a_steps': 4, 'approach': 'brute', 'focus': 3, 'fuser': 'equal', 'grain': 8}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.55 | +-0.08|
-| OEE | 0.86 | +-0.05|
-| DTC | 0.98 | +-0.01|
-| kNN | 0.93 | +-0.00|
-| SVC | 0.93 | +-0.00|
-| NBC | 0.17 | +-0.04|
+| SEE | 0.658 | +-0.07|
+| OEE | 0.921 | +-0.01|
+| DTC | 0.978 | +-0.01|
+| kNN | 0.925 | +-0.00|
+| SVC | 0.925 | +-0.00|
+| NBC | 0.174 | +-0.04|
 
 ![](figures/imb_multiclassthyroid.png)
 
@@ -1176,16 +1176,16 @@ Best parameters
 ### wine dataset
 
 Best parameters
-{'a_steps': 0, 'focus': 3}
+{'a_steps': 2, 'approach': 'brute', 'focus': 3, 'fuser': 'equal', 'grain': 16}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.94 | +-0.05|
-| OEE | 0.97 | +-0.03|
-| DTC | 0.93 | +-0.03|
-| kNN | 0.69 | +-0.05|
-| SVC | 0.44 | +-0.03|
-| NBC | 0.98 | +-0.02|
+| SEE | 0.966 | +-0.03|
+| OEE | 0.972 | +-0.04|
+| DTC | 0.915 | +-0.04|
+| kNN | 0.691 | +-0.05|
+| SVC | 0.438 | +-0.03|
+| NBC | 0.983 | +-0.02|
 
 ![](figures/imb_multiclasswine.png)
 
@@ -1194,16 +1194,16 @@ Best parameters
 ### yeast dataset
 
 Best parameters
-{'a_steps': 5, 'focus': 5}
+{'a_steps': 1, 'approach': 'brute', 'focus': 3, 'fuser': 'equal', 'grain': 8}
 
 |CLF|ACC|STD|
 |---|---|---|
-| SEE | 0.37 | +-0.01|
-| OEE | 0.47 | +-0.03|
-| DTC | 0.49 | +-0.01|
-| kNN | 0.56 | +-0.01|
-| SVC | 0.42 | +-0.01|
-| NBC | 0.15 | +-0.03|
+| SEE | 0.449 | +-0.02|
+| OEE | 0.494 | +-0.04|
+| DTC | 0.481 | +-0.01|
+| kNN | 0.559 | +-0.01|
+| SVC | 0.423 | +-0.01|
+| NBC | 0.146 | +-0.03|
 
 ![](figures/imb_multiclassyeast.png)
 
