@@ -6,36 +6,24 @@ from sklearn import neighbors, tree, svm, naive_bayes, datasets, model_selection
 import matplotlib.pyplot as plt
 from sklearn.model_selection import GridSearchCV
 
-
-def notify(title, text):
-    os.system("""
-              osascript -e 'display notification "{}" with title "{}"'
-              """.format(text, title))
-
-# Prepare clfs
+# Prepare experiments
+ds_dir = "datasets"
 clfs = {
-    'SEE': None,
-    'OEE': None,
+    'EEC': None,
     'DTC': tree.DecisionTreeClassifier,
     'kNN': neighbors.KNeighborsClassifier,
     'SVC': svm.SVC,
-    'NBC': naive_bayes.GaussianNB
-}
-
-# Select groups of datasets
+    'NBC': naive_bayes.GaussianNB,
+    "MLP": neural_network.MLPClassifier }
 ds_groups = [
     "imb_IRhigherThan9p1",
     "imb_IRhigherThan9p2",
     "imb_IRlowerThan9",
-    "imb_multiclass"
-]
-
-# Point db directory
-ds_dir = "datasets"
+    "imb_multiclass" ]
+table_file = open("tables/results.tex", "w")
 
 # Iterating groups
 for group_idx, ds_group in enumerate(ds_groups):
-    notify(ds_group, "%i/%i" % (group_idx + 1,len(ds_groups)))
     group_path = "%s/%s" % (ds_dir, ds_group)
     print("## Group %s" % ds_group)
 
@@ -44,51 +32,42 @@ for group_idx, ds_group in enumerate(ds_groups):
     for ds_idx, ds_name in enumerate(ds_list):
         if ds_name[0] == '.' or ds_name[0] == '_':
             continue
-        notify(ds_name, "%i/%i" % (ds_idx + 1,len(ds_list)))
+        h.notify(ds_name, "%i/%i (%i/%i)" % (
+            ds_idx + 1,len(ds_list),
+            group_idx + 1,len(ds_groups)
+        ))
 
         print("\n### %s dataset" % ds_name)
         scores = np.zeros((len(clfs), 5))
 
-        # Grid Search
-        parameters = {
-            'approach':['brute','purified','random'],
-            'fuser':['equal', 'theta'],
-            'focus':[1,2,3,4],
-            'a_steps':[1,2,3,4],
-            'grain':[8,16,32]
-        }
-
+        # Load dataset
         X, y = h.load_keel("%s/%s/%s.dat" % (
             group_path, ds_name, ds_name
         ))
+
+        # GridGridSearchCV
         print("\nBest parameters")
         ee = exposing.EE()
-        gs = GridSearchCV(ee, parameters)
+        gs = GridSearchCV(ee, h.spams())
         gs.fit(X, y)
-        params = gs.best_params_
-        print(params)
+        best_params = gs.best_params_
+        print(">\t%s" % best_params)
 
         for i in range(1,6):
-            tra_path = "%s/%s/%s-5-fold/%s-5-%itra.dat" % (
+            X_train, y_train = h.load_keel("%s/%s/%s-5-fold/%s-5-%itra.dat" % (
                 group_path, ds_name, ds_name, ds_name, i
-            )
-            tst_path = "%s/%s/%s-5-fold/%s-5-%itst.dat" % (
+            ))
+            X_test, y_test = h.load_keel("%s/%s/%s-5-fold/%s-5-%itst.dat" % (
                 group_path, ds_name, ds_name, ds_name, i
-            )
-            X_train, y_train = h.load_keel(tra_path)
-            X_test, y_test = h.load_keel(tst_path)
+            ))
 
-            ee = None
             for j, clf_name in enumerate(clfs):
-                # SEE
-                if clf_name == 'SEE':
-                    clf = exposing.EE(approach='brute')
-                elif clf_name == 'OEE':
-                    clf = exposing.EE(approach=params['approach'],
-                                      fuser=params['fuser'],
-                                      grain=params['grain'],
-                                      focus = params['focus'],
-                                      a_steps = params['a_steps'])
+                if clf_name == 'EEC':
+                    clf = exposing.EE(approach=best_params['approach'],
+                                      fuser=best_params['fuser'],
+                                      grain=best_params['grain'],
+                                      focus = best_params['focus'],
+                                      a_steps = best_params['a_steps'])
                     ee = clf
                 else:
                     clf = clfs[clf_name]()
@@ -99,38 +78,12 @@ for group_idx, ds_group in enumerate(ds_groups):
         mean_scores = np.mean(scores, axis = 1)
         std_scores = np.std(scores, axis = 1)
 
+        figname, fignameb = h.plot(mean_scores, std_scores, ds_group,
+                                   ds_name, clfs, ee)
 
-        fig, ax = plt.subplots(1, figsize = (6,3))
-        figname = 'figures/%s%s.png' % (ds_group,ds_name)
-        ax.bar(clfs.keys(), mean_scores, yerr=std_scores)
-        ax.set_ylim([0, 1])
-        plt.savefig(figname)
-        plt.savefig("bar.png")
-        plt.close(fig)
+        h.markdown(figname,fignameb,clfs, mean_scores, std_scores)
 
-        #print(len(ee.ensemble_))
-        v = np.ceil(len(ee.ensemble_)/4).astype(int)
-        #print(v)
-
-        fig, ax = plt.subplots(v,4, figsize = (8, 2*v))
-        fignameb = 'figures/%s%se.png' % (ds_group,ds_name)
-        for e in range(v*4):
-            if e < len(ee.ensemble_):
-                ex = ee.ensemble_[e]
-                ax[e // 4,e % 4].imshow(ex.rgb())
-                ax[e // 4,e % 4].set_title("%s - %.3f" % (
-                    ex.given_subspace, ex.theta_
-                ), fontsize=8)
-            ax[e // 4,e % 4].axis('off')
-        plt.tight_layout()
-        plt.savefig(fignameb)
-        plt.savefig("foo.png")
-        plt.close(fig)
-
-        print("\n|CLF|ACC|STD|")
-        print("|---|---|---|")
-        for i, clf in enumerate(clfs):
-            print("| %s | %.3f | +-%.2f|" % (clf, mean_scores[i], std_scores[i]))
-
-        print("\n![](%s)" % figname)
-        print("\n![](%s)" % fignameb)
+        tl = h.texline(scores, clfs, ds_name, best_params)
+        print(tl)
+        table_file.write(tl)
+table_file.close()

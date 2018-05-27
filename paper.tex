@@ -1,0 +1,30 @@
+\documentclass[11pt]{article}
+\usepackage{booktabs}
+\usepackage[a4paper, total={10in}]{geometry}
+\usepackage[table]{xcolor}
+
+\definecolor{pwrred}{HTML}{AF1C15}
+\definecolor{pwrgreen}{HTML}{1CAF15}
+\definecolor{pwrblue}{HTML}{1C15AF}
+\definecolor{pwrbeige}{HTML}{FAD2A3}
+
+\begin{document}
+
+
+\begin{table*}[t]
+  \centering
+  \scriptsize
+  \begin{tabular}{|l||l|c|c|c|c||l|l|l|l|l|l|}
+  	\toprule
+  	\bfseries Dataset & \bfseries approach & \bfseries fuser & \bfseries g & \bfseries f & \bfseries a & \textsc{ee} & \textsc{dt} & k\textsc{nn} & \textsc{svc} & \textsc{nb} & \textsc{mlp} \\
+  	
+  	\midrule
+  	
+
+    \input{tables/results}
+    \bottomrule
+  \end{tabular}
+  \caption{Here is a caption.}
+\end{table*}
+
+\end{document}
