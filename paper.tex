@@ -2,11 +2,47 @@
 \usepackage{booktabs}
 \usepackage[a4paper, total={10in}]{geometry}
 \usepackage[table]{xcolor}
-
+\usepackage{caption}
+\usepackage{shortvrb}
 \definecolor{pwrred}{HTML}{AF1C15}
 \definecolor{pwrgreen}{HTML}{1CAF15}
 \definecolor{pwrblue}{HTML}{1C15AF}
 \definecolor{pwrbeige}{HTML}{FAD2A3}
+
+
+% array.sty
+\newcolumntype{f}{>{$}l<{$}}
+\newcolumntype{n}{l}
+\newcolumntype{N}{>{\scriptsize}l}
+\newcolumntype{v}[1]{>{\raggedright\hspace{0pt}}p{#1}}
+\newcolumntype{V}[1]{>{\scriptsize\raggedright\hspace{0pt}}p{#1}}
+%
+% array.sty, dcolumn.sty
+\newcolumntype{B}[1]{>{\boldmath\DC@{.}{,}{#1}}l<{\DC@end}}
+\newcolumntype{d}[1]{>{\DC@{.}{,}{#1}}l<{\DC@end}}
+\newcolumntype{i}[1]{>{\DC@{.}{,}{#1}\mathnormal\bgroup}l<{\egroup\DC@end}}
+\newcolumntype{s}[1]{>{\DC@{.}{,}{#1}\mathsf\bgroup}l<{\egroup\DC@end}}
+%
+% array.sty, rotating.sty
+\newcolumntype{R}[1]{%
+  >{\begin{turn}{90}\begin{minipage}{#1}\scriptsize\raggedright\hspace{0pt}}l%
+  <{\end{minipage}\end{turn}}%
+}
+%
+% array.sty, tabularx.sty
+\newcolumntype{x}{>{\scriptsize\raggedright\hspace{0pt}}X}
+%
+\usepackage{array,booktabs,ragged2e}
+\newcolumntype{R}[1]{>{\RaggedLeft\arraybackslash}p{#1}}
+% caption2.sty
+\renewcommand{\captionfont}{\normalfont\itshape\footnotesize}
+\renewcommand{\captionlabelfont}{\normalfont\bfseries\footnotesize}
+%
+% shortvrb.sty
+\MakeShortVerb{\|}
+%
+\makeatother
+
 
 \begin{document}
 
@@ -14,17 +50,21 @@
 \begin{table*}[t]
   \centering
   \scriptsize
-  \begin{tabular}{|l||l|c|c|c|c||l|l|l|l|l|l|}
+  \caption{Here is a caption.}
+  \begin{tabular}{@{}l llrrr llllll@{}}
   	\toprule
-  	\bfseries Dataset & \bfseries approach & \bfseries fuser & \bfseries g & \bfseries f & \bfseries a & \textsc{ee} & \textsc{dt} & k\textsc{nn} & \textsc{svc} & \textsc{nb} & \textsc{mlp} \\
+  	\multicolumn{1}{@{}N}{Dataset} & \multicolumn{5}{N}{Optimized parameters of \textsc{ee}} & \multicolumn{5}{N}{Classification algorithms} \\
+  	 & \multicolumn{1}{V{4.5em}}{Approach}
+  	 & \multicolumn{1}{V{3em}}{Fuser}
+  	 & \multicolumn{1}{V{3em}}{Grain}
+  	 & \multicolumn{1}{V{3em}}{Focus}
+  	 & \multicolumn{1}{V{1.5em}}{af.} & \textsc{ee} & \textsc{dt} & k\textsc{nn} & \textsc{svc} & \textsc{nb} & \textsc{mlp} \\
   	
-  	\midrule
   	
 
     \input{tables/results}
     \bottomrule
   \end{tabular}
-  \caption{Here is a caption.}
 \end{table*}
 
 \end{document}
